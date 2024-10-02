@@ -291,7 +291,7 @@ int isBinaryOperator(char *token){
         return 0; 
     }
 }
-/* TODO: change this */
+
 boolean evaluateBinaryOperator(char *operator, boolean op1, boolean op2){
     if (strequals(operator, "AND") == TRUE) {
         if (op1 == TRUE && op2 == TRUE) {
