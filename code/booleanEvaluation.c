@@ -293,27 +293,56 @@ int isBinaryOperator(char *token){
 }
 /* TODO: change this */
 boolean evaluateBinaryOperator(char *operator, boolean op1, boolean op2){
-    if (strequals(operator, "AND") == TRUE){
-        return (op1 == TRUE && op2 == TRUE) ? TRUE : FALSE;
+    if (strequals(operator, "AND") == TRUE) {
+        if (op1 == TRUE && op2 == TRUE) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
     } 
-    else if (strequals(operator, "NAND") == TRUE){ 
-        return (op1 == TRUE && op2 == TRUE) ? FALSE : TRUE;
+    else if (strequals(operator, "NAND") == TRUE) {
+        if (op1 == TRUE && op2 == TRUE) {
+            return FALSE;
+        } else {
+            return TRUE;
+        }
     } 
-    else if (strequals(operator, "OR") == TRUE){
-        return (op1 == TRUE || op2 == TRUE) ? TRUE : FALSE;
+    else if (strequals(operator, "OR") == TRUE) {
+        if (op1 == TRUE || op2 == TRUE) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
     } 
-    else if (strequals(operator, "NOR") == TRUE){
-        return (op1 == TRUE || op2 == TRUE) ? FALSE : TRUE;
+    else if (strequals(operator, "NOR") == TRUE) {
+        if (op1 == TRUE || op2 == TRUE) {
+            return FALSE;
+        } else {
+            return TRUE;
+        }
     } 
-    else if (strequals(operator, "XOR") == TRUE){
-        return (op1 != op2) ? TRUE : FALSE;
+    else if (strequals(operator, "XOR") == TRUE) {
+        if (op1 != op2) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
     } 
-    else if (strequals(operator, "COND") == TRUE){
-        return (op1 == FALSE || op2 == TRUE) ? TRUE : FALSE;
+    else if (strequals(operator, "COND") == TRUE) {
+        if (op1 == FALSE || op2 == TRUE) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
     } 
-    else if (strequals(operator, "BICOND") == TRUE){
-        return (op1 == op2) ? TRUE : FALSE;
-    } else {
+    else if (strequals(operator, "BICOND") == TRUE) {
+        if (op1 == op2) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    } 
+    else {
         return ERROR;
     }
 }
